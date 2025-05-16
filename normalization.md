@@ -26,7 +26,7 @@
 ### Create a Location table
 ### Location(location_id PK, city, country)
 ### Update Property:
-### property_id (PK), host_id (FK), title, description, location_id (FK), price_per_night
+### Replace location with location_id (FK)
 
 ## 🔸 Booking Table
 ### status (pending, confirmed, canceled) could be stored as raw text.
@@ -35,7 +35,7 @@
 ### If you expect to expand booking statuses (e.g., translated names, color codes), extract into:
 ### BookingStatus(status_code PK, description)
 ### Update Booking:
-### booking_id (PK), user_id (FK), property_id (FK), booking_date, status_code (FK)
+### Then change Booking.status to status_code (FK).
 
 ##🔸 Payment Table
 ### If payment_method is repeated (e.g., "Credit Card", "PayPal") across rows...
@@ -44,7 +44,7 @@
 ### Create a PaymentMethod table:
 ### payment_method_id (PK), method_name
 ### Update Payment:
-### payment_id (PK), booking_id (FK), amount, payment_date, payment_method_id (FK)
+###  Then change payment_method to payment_method_id (FK)
 
 ## 🔸 Review Table
 ### No transitive dependencies. Each review is clearly linked to a user and property.
