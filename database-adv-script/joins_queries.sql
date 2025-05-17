@@ -14,6 +14,7 @@ FROM
     Booking
 INNER JOIN 
     User ON Booking.user_id = User.user_id;
+
 -- a query using aLEFT JOIN to retrieve all properties and their reviews, including properties that have no reviews.
 SELECT 
     Property.property_id,
@@ -28,6 +29,7 @@ FROM
     Property
 LEFT JOIN 
     Review ON Property.property_id = Review.property_id;
+
 --  a query using a FULL OUTER JOIN to retrieve all users and all bookings, even if the user has no booking or a booking is not linked to a user.
 SELECT
     User.user_id,
