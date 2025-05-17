@@ -31,3 +31,6 @@ CREATE INDEX idx_property_host_id ON Property(host_id);
 -- CREATE INDEX idx_property_location ON Property(location);
 
 CREATE INDEX idx_property_price ON Property(price_per_night);
+
+-- Check analysis of the database after creating indexs
+EXPLAIN ANALYZE property_calender;
